@@ -1,0 +1,150 @@
+/* Reset des styles pour éliminer les différences entre les navigateurs */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style de base pour le corps de la page */
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: (245, 245, 245);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+/* En-tête de page */
+header {
+  background-color: (245, 245, 245);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color:(245, 245, 245);
+    
+  }
+  
+  nav a {
+    color: #e32d2d;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  nav li {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+/* Assurer que le `main` occupe toute la hauteur de l'écran */
+main {
+  width: 100%;
+  min-height: calc(100vh - 100px); /* Prend tout l'écran moins le header/footer */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Empêche les débordements */
+}
+
+/* Assurer que l'image de fond prend toute la place */
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* S'assure que l'image remplit bien l'espace sans déformation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Met l'image en arrière-plan */
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Liens */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Assurer que l'image prend tout l'espace de `main` */
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(3px); /* Ajoute un flou à l'image */
+}
+
+/* Positionnement de l'overlay */
+.overlay {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  text-align: center;
+}
+
+/* Ajout d'un fond semi-transparent derrière le titre */
+.title-container {
+  background: rgba(0, 0, 0, 0.5); /* Fond sombre transparent */
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block; /* Ajuste le fond au texte */
+}
+
+/* Style du titre */
+.title {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Bouton de contact */
+.contact-button {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  padding: 12px 20px; /* Plus d’espace intérieur */
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem; /* Ajuste la taille du texte */
+  min-width: 180px; /* Taille minimale pour éviter que le texte soit trop serré */
+  justify-content: center; /* Centre l'icône et le texte */
+}
+
+/* Icône du téléphone */
+.phone-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
