@@ -1,17 +1,14 @@
 import HomePage from '../Pages/HomePage';
 import NewPage from '../Pages/NewPage';
-import Menu from '../Pages/Menu';
-import Itin from '../Pages/Intineraire';
-import Pate from '../Pages/Pates';
-import Panini from '../Pages/Paninis';
+import Photo from '../Pages/Photo';
+import Contact from '../Pages/Contact';
+
 
 const routes = {
   '/': HomePage,
   '/new': NewPage,
-  '/menu': Menu,
-  '/route': Itin,
-  '/menu/pate': Pate,
-  '/menu/panini': Panini,
+  '/photo': Photo,
+  '/contact': Contact,
 };
 
 export default routes;

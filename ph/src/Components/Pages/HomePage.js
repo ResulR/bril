@@ -40,47 +40,62 @@ const HomePage = () => {
     </div>
 
 
+<!-- Première section : Image à droite, Texte à gauche -->
 <div class="product-section">
-  <!-- Zirkon -->
-  <div class="product-card">
+  <div class="text-container">
     <h2>Zirkon</h2>
-    <img src="${zirkonImg}" alt="Zirkon">
     <p>
       Nëse densiteti i kockës suaj e lejon, implanti dentar është një zgjidhje moderne
       për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.
     </p>
   </div>
+  <div class="image-container">
+    <img src="${zirkonImg}" alt="Zirkon">
+  </div>
+</div>
 
-  <!-- E-MAX -->
-  <div class="product-card">
-    <h2>E-MAX</h2>
+<!-- Deuxième section : Image à gauche, Texte à droite -->
+<div class="product-section reverse">
+  <div class="image-container">
     <img src="${zirkonImg}" alt="E-MAX">
+  </div>
+  <div class="text-container">
+    <h2>E-MAX</h2>
     <p>
       Çdo pacient ka protezën e tij dentare. Me fjalë të tjera, forma e dhëmbëve ndryshon
       nga një person te tjetri.
     </p>
   </div>
+</div>
 
-  <!-- Veneers -->
-  <div class="product-card">
+<!-- Troisième section : Image à droite, Texte à gauche -->
+<div class="product-section">
+  <div class="text-container">
     <h2>Veneers</h2>
-    <img src="${zirkonImg}" alt="Veneers">
     <p>
       Veneers janë një zgjidhje estetike për të përmirësuar buzëqeshjen tuaj. 
       Ato ofrojnë një pamje natyrale dhe një mbrojtje të fortë për dhëmbët tuaj.
     </p>
   </div>
+  <div class="image-container">
+    <img src="${zirkonImg}" alt="Veneers">
+  </div>
+</div>
 
-  <!-- Implant Dentaire -->
-  <div class="product-card">
-    <h2>Implant Dentaire</h2>
+<!-- Quatrième section : Image à gauche, Texte à droite -->
+<div class="product-section reverse">
+  <div class="image-container">
     <img src="${zirkonImg}" alt="Implant Dentaire">
+  </div>
+  <div class="text-container">
+    <h2>Implant Dentaire</h2>
     <p>
       Implantet dentare janë një opsion i përhershëm për të zëvendësuar dhëmbët e munguar,
       duke ofruar funksionalitet dhe estetikë të lartë.
     </p>
   </div>
 </div>
+
 
 
     

@@ -27,25 +27,38 @@ header {
   width: 100%;
 }
 
-/* Navigation */
-nav {
+.navbar-nav {
   display: flex;
-  justify-content: center;
-  background-color: rgb(245, 245, 245);
-  width: 100%;
+  gap: 30px; /* Augmente l'espacement entre les éléments */
+}
+.navbar-nav .nav-link {
+  font-size: 18px; /* Taille normale */
+  font-weight: bold; /* Texte en gras */
+  padding: 10px 15px; /* Espace autour du texte */
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Effets fluides */
+  text-decoration: none; /* Supprime le soulignement */
 }
 
-nav a {
-  color: #e32d2d;
-  text-decoration: none;
-  padding: 10px;
-  margin: 0 10px;
+.navbar-nav .nav-link:hover {
+  color: #e32d2d; /* Change la couleur au survol */
+  transform: scale(1.1); /* Agrandit légèrement le texte */
+}
+/* Positionner la navbar à droite */
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between; /* Sépare le logo et le menu */
 }
 
-nav li {
-  flex-grow: 1;
-  text-align: center;
+.navbar-brand {
+  flex: 1; /* Le logo prend un petit espace */
 }
+
+.navbar-collapse {
+  flex: 0.6; /* La navigation prend les 3/4 de l'espace */
+  display: flex;
+  justify-content: flex-end; /* Pousse la navbar vers la droite */
+}
+
 
 /* Assurer que `main` empile les sections verticalement */
 main {
@@ -61,8 +74,7 @@ main {
   width: 100%;
   height: 100vh; /* Assure que l'image ne prend que la hauteur de l'écran */
   overflow: hidden;
-  border-bottom-left-radius: 50px; /* Arrondi les coins en bas */
-  border-bottom-right-radius: 50px;
+  border-radius: 50px ;
 }
 
 /* L'image de fond couvre l'écran mais ne continue pas plus loin */
@@ -80,8 +92,8 @@ main {
 /* Positionnement de l'overlay */
 .overlay {
   position: absolute;
-  top: 20%; /* Ajuste cette valeur pour monter l'overlay */
-  left: 5%; /* Ajuste cette valeur pour déplacer vers la gauche */
+  top: 30%; /* Ajuste cette valeur pour monter l'overlay */
+  left: 15%; /* Ajuste cette valeur pour déplacer vers la gauche */
   text-align: left; /* Assure que le texte reste bien aligné */
   display: flex;
   flex-direction: column;
@@ -184,9 +196,10 @@ main {
 .product-section {
   display: flex;
   flex-wrap: wrap; /* Permet de passer à la ligne après 2 cartes */
+  align-items: center;
   justify-content: space-between; /* Équilibre l'espace entre les cartes */
   width: 80%;
-  margin: 100px auto; /* Espace avec la section du dessus */
+  margin: 30px auto; /* Espace avec la section du dessus */
   padding: 40px 0;
   background-color: #f8f8f8;
   border-radius: 10px;
@@ -220,11 +233,14 @@ main {
   margin-bottom: 15px;
 }
 
-/* Texte des cartes */
-.product-card p {
-  font-size: 16px;
-  line-height: 1.6;
+.text-container p {
+  font-size: 20px;
+  line-height: 1.8;
+  max-width: 70%; /* Réduit la largeur du texte à 75% du conteneur */
+  margin: 0 auto; /* Centre le texte horizontalement */
+  text-align: center; /* Centre le texte */
 }
+
 
 /* Ajustements pour écran plus petit */
 @media (max-width: 768px) {
@@ -232,6 +248,62 @@ main {
     width: 100%; /* Passe en une seule colonne sur mobile */
   }
 }
+
+@media (max-width: 768px) {
+  .description-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-container {
+    width: 90%;
+    order: 1; /* Titre en haut */
+  }
+
+  .text-container p {
+    font-size: 20px;
+    line-height: 1.6; /* Réduit légèrement l'espacement entre les lignes */
+    max-width: 80%; /* Réduit la largeur pour éviter les coupures trop larges */
+    margin: 0 auto;
+    text-align: left; /* Évite la justification qui crée ces espaces bizarres */
+    word-spacing: normal; /* Empêche les espaces trop grands entre les mots */
+  }
+  
+
+  .image-container {
+    width: 100%; /* S'assure que le conteneur d'image prend toute la largeur */
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .image-container img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .contact-btn {
+    order: 3; /* Place le bouton en bas */
+    margin-top: 20px;
+  }
+  .text-container {
+    width: 100%; /* Le conteneur prend toute la largeur */
+    text-align: center; /* Centre le texte */
+  }
+
+  .text-container h2 {
+    font-size: 28px; /* Ajuste la taille du titre pour mobile */
+    font-weight: bold;
+    text-align: center; /* Centre le titre */
+    margin-bottom: 10px; /* Ajoute un petit espace sous le titre */
+  }
+}
+
 
 
 /* Footer */
