@@ -1,12 +1,14 @@
+// HomePage.js corrigé avec centrage dynamique des flèches
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-plusplus */
 import phoneIcon from '../../img/phoneIcon.png';
-import homepageImage from '../../img/homepageImage.png'; // Import de l'image de fond
+import homepageImage from '../../img/homepageImage.png';
 import descImg from '../../img/img_display.jpg';
-import zirkonImg from '../../img/zirkon.png';
+import ZirkonImg from '../../img/zirkon.png';
 
 const HomePage = () => {
   const main = document.querySelector('main');
 
-  // Intégration directe de l'image dans le HTML
   main.innerHTML = `
     <div class="homepage-container">
       <img src="${homepageImage}" alt="Background" class="background-image">
@@ -22,87 +24,173 @@ const HomePage = () => {
     </div>
 
     <div class="description-section">
-      <!-- Texte à gauche -->
       <div class="text-container">
         <h2>Laboratori dentar NEXIS</h2>
-        <p>
-          Si dentist, nuk keni mjaftueshëm kohë për të prodhuar proteza dentare?
-          Dëshironi të përfitoni nga një punë e personalizuar dhe me cilësi të lartë?
-          Laboratori dentar Nexis në Prishtinë është profesionisti që ju nevojitet!
-        </p>
+        <p>Si dentist, nuk keni mjaftueshëm kohë për të prodhuar proteza dentare? Dëshironi të përfitoni nga një punë e personalizuar dhe me cilësi të lartë?</p>
         <button class="contact-btn">Na kontaktoni</button>
       </div>
-
-      <!-- Image à droite -->
       <div class="image-container">
         <img src="${descImg}" alt="Laboratoire dentaire">
       </div>
     </div>
 
-
-<!-- Première section : Image à droite, Texte à gauche -->
-<div class="product-section">
-  <div class="text-container">
-    <h2>Zirkon</h2>
-    <p>
-      Nëse densiteti i kockës suaj e lejon, implanti dentar është një zgjidhje moderne
-      për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.
-    </p>
-  </div>
-  <div class="image-container">
-    <img src="${zirkonImg}" alt="Zirkon">
-  </div>
-</div>
-
-<!-- Deuxième section : Image à gauche, Texte à droite -->
-<div class="product-section reverse">
-  <div class="image-container">
-    <img src="${zirkonImg}" alt="E-MAX">
-  </div>
-  <div class="text-container">
-    <h2>E-MAX</h2>
-    <p>
-      Çdo pacient ka protezën e tij dentare. Me fjalë të tjera, forma e dhëmbëve ndryshon
-      nga një person te tjetri.
-    </p>
-  </div>
-</div>
-
-<!-- Troisième section : Image à droite, Texte à gauche -->
-<div class="product-section">
-  <div class="text-container">
-    <h2>Veneers</h2>
-    <p>
-      Veneers janë një zgjidhje estetike për të përmirësuar buzëqeshjen tuaj. 
-      Ato ofrojnë një pamje natyrale dhe një mbrojtje të fortë për dhëmbët tuaj.
-    </p>
-  </div>
-  <div class="image-container">
-    <img src="${zirkonImg}" alt="Veneers">
-  </div>
-</div>
-
-<!-- Quatrième section : Image à gauche, Texte à droite -->
-<div class="product-section reverse">
-  <div class="image-container">
-    <img src="${zirkonImg}" alt="Implant Dentaire">
-  </div>
-  <div class="text-container">
-    <h2>Implant Dentaire</h2>
-    <p>
-      Implantet dentare janë një opsion i përhershëm për të zëvendësuar dhëmbët e munguar,
-      duke ofruar funksionalitet dhe estetikë të lartë.
-    </p>
-  </div>
-</div>
-
-
-
-    
-
-
-
+    <!-- Section Zirkon avec Texte + Nouveau Slider -->
+    <div class="product-section">
+      <div class="text-container">
+        <h2>Zirkon</h2>
+        <p>Implanti dentar është një zgjidhje moderne për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.</p>
+      </div>
+      <div class="carousel-wrapper">
+        <div class="slider-container">
+          <div class="slider-content">
+            ${[1,2,3,4,5,6].map(i => `
+              <div class="slider-single">
+                <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
+                <h1 class="slider-single-title">Zirkon ${i}</h1>
+                <a class="slider-single-likes" href="javascript:void(0);">
+                  <i class="fa fa-heart"></i>
+                  <p>1,247</p>
+                </a>
+              </div>
+            `).join('')}
+          </div>
+          <a class="slider-left"><i class="fa fa-arrow-left"></i></a>
+          <a class="slider-right"><i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
   `;
+
+  const repeat = false;
+  const noArrows = false;
+  const noBullets = false;
+
+  const container = document.querySelector('.slider-container');
+  const slide = document.querySelectorAll('.slider-single');
+  const slideTotal = slide.length - 1;
+  let slideCurrent = -1;
+
+  function initBullets() {
+    if (noBullets) return;
+
+    const bulletContainer = document.createElement('div');
+    bulletContainer.classList.add('bullet-container');
+
+    slide.forEach((elem, i) => {
+      const bullet = document.createElement('div');
+      bullet.classList.add('bullet');
+      bullet.id = `bullet-index-${i}`;
+      bullet.addEventListener('click', () => goToIndexSlide(i));
+      bulletContainer.appendChild(bullet);
+      elem.classList.add('proactivede');
+    });
+
+    container.appendChild(bulletContainer);
+  }
+
+  function initArrows() {
+    if (noArrows) return;
+    document.querySelector('.slider-left').addEventListener('click', () => slideLeft());
+    document.querySelector('.slider-right').addEventListener('click', () => slideRight());
+  }
+
+  function updateBullet() {
+    if (!noBullets) {
+      document.querySelectorAll('.bullet').forEach((elem, i) => {
+        elem.classList.toggle('active', i === slideCurrent);
+      });
+    }
+    checkRepeat();
+  }
+
+  function checkRepeat() {
+    if (!repeat) {
+      const left = document.querySelector('.slider-left');
+      const right = document.querySelector('.slider-right');
+
+      if (slideCurrent === slide.length - 1) {
+        slide[0].classList.add('not-visible');
+        right?.classList.add('not-visible');
+        left?.classList.remove('not-visible');
+      } else if (slideCurrent === 0) {
+        slide[slide.length - 1].classList.add('not-visible');
+        left?.classList.add('not-visible');
+        right?.classList.remove('not-visible');
+      } else {
+        slide[0].classList.remove('not-visible');
+        slide[slide.length - 1].classList.remove('not-visible');
+        left?.classList.remove('not-visible');
+        right?.classList.remove('not-visible');
+      }
+    }
+  }
+
+  function slideRight() {
+    slideCurrent = (slideCurrent < slideTotal) ? slideCurrent + 1 : 0;
+    activateSlides();
+  }
+
+  function slideLeft() {
+    slideCurrent = (slideCurrent > 0) ? slideCurrent - 1 : slideTotal;
+    activateSlides();
+  }
+
+  function goToIndexSlide(index) {
+    while (slideCurrent !== index) {
+      slideCurrent < index ? slideRight() : slideLeft();
+    }
+  }
+
+  function activateSlides() {
+    const preactive = slide[(slideCurrent - 1 + slide.length) % slide.length];
+    const active = slide[slideCurrent];
+    const proactive = slide[(slideCurrent + 1) % slide.length];
+
+    slide.forEach((el) => {
+      el.classList.remove('preactivede', 'preactive', 'active', 'proactive', 'proactivede');
+      el.classList.add('proactivede');
+    });
+
+    preactive.classList.remove('proactivede');
+    preactive.classList.add('preactive');
+
+    active.classList.remove('proactivede');
+    active.classList.add('active');
+
+    proactive.classList.remove('proactivede');
+    proactive.classList.add('proactive');
+
+    updateBullet();
+    setTimeout(centerArrowsOnImage, 50); // assure exécution après rendering
+  }
+
+  function centerArrowsOnImage() {
+    const activeImage = document.querySelector('.slider-single.active .slider-single-image');
+    const leftArrow = document.querySelector('.slider-left');
+    const rightArrow = document.querySelector('.slider-right');
+
+    if (activeImage && leftArrow && rightArrow) {
+      const imageRect = activeImage.getBoundingClientRect();
+      const containerRect = activeImage.parentElement.getBoundingClientRect();
+      const offsetTop = imageRect.top - containerRect.top + imageRect.height / 2;
+
+      leftArrow.style.top = `${offsetTop}px`;
+      rightArrow.style.top = `${offsetTop}px`;
+    }
+  }
+
+  function slideInitial() {
+    initBullets();
+    initArrows();
+    setTimeout(() => {
+      slideRight();
+      centerArrowsOnImage();
+    }, 500);
+
+    window.addEventListener('resize', centerArrowsOnImage);
+  }
+
+  slideInitial();
 };
 
 export default HomePage;
