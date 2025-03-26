@@ -1,4 +1,3 @@
-// HomePage.js corrigé avec centrage dynamique des flèches
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 import phoneIcon from '../../img/phoneIcon.png';
@@ -36,29 +35,30 @@ const HomePage = () => {
 
     <!-- Section Zirkon avec Texte + Nouveau Slider -->
     <div class="product-section">
-      <div class="text-container">
-        <h2>Zirkon</h2>
-        <p>Implanti dentar është një zgjidhje moderne për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.</p>
-      </div>
-      <div class="carousel-wrapper">
-        <div class="slider-container">
-          <div class="slider-content">
-            ${[1,2,3,4,5,6].map(i => `
-              <div class="slider-single">
-                <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
-                <h1 class="slider-single-title">Zirkon ${i}</h1>
-                <a class="slider-single-likes" href="javascript:void(0);">
-                  <i class="fa fa-heart"></i>
-                  <p>1,247</p>
-                </a>
-              </div>
-            `).join('')}
+  <div class="text-container">
+    <h2>Zirkon</h2>
+    <p>Implanti dentar është një zgjidhje moderne për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.</p>
+  </div>
+  <div class="carousel-wrapper">
+    <div class="slider-container">
+      <div class="slider-content">
+        ${[1,2,3,4,5,6].map(i => `
+          <div class="slider-single">
+            <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
+            <h1 class="slider-single-title">Zirkon ${i}</h1>
+            <a class="slider-single-likes" href="javascript:void(0);">
+              <i class="fa fa-heart"></i>
+              <p>1,247</p>
+            </a>
           </div>
-          <a class="slider-left"><i class="fa fa-arrow-left"></i></a>
-          <a class="slider-right"><i class="fa fa-arrow-right"></i></a>
-        </div>
+        `).join('')}
       </div>
+      <a class="slider-left"><span class="arrow arrow-left"></span></a>
+      <a class="slider-right"><span class="arrow arrow-right"></span></a>
     </div>
+  </div>
+</div>
+
   `;
 
   const repeat = false;
@@ -161,33 +161,43 @@ const HomePage = () => {
     proactive.classList.add('proactive');
 
     updateBullet();
-    setTimeout(centerArrowsOnImage, 50); // assure exécution après rendering
   }
 
-  function centerArrowsOnImage() {
-    const activeImage = document.querySelector('.slider-single.active .slider-single-image');
-    const leftArrow = document.querySelector('.slider-left');
-    const rightArrow = document.querySelector('.slider-right');
+  let touchStartX = 0;
+let touchEndX = 0;
 
-    if (activeImage && leftArrow && rightArrow) {
-      const imageRect = activeImage.getBoundingClientRect();
-      const containerRect = activeImage.parentElement.getBoundingClientRect();
-      const offsetTop = imageRect.top - containerRect.top + imageRect.height / 2;
+container.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
 
-      leftArrow.style.top = `${offsetTop}px`;
-      rightArrow.style.top = `${offsetTop}px`;
+container.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleGesture();
+});
+
+function handleGesture() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance > 50) {
+    // Swipe vers la droite = image précédente
+    if (repeat || slideCurrent > 0) {
+      slideLeft();
+    }
+  } else if (swipeDistance < -50) {
+    // Swipe vers la gauche = image suivante
+    if (repeat || slideCurrent < slide.length - 1) {
+      slideRight();
     }
   }
+}
+
 
   function slideInitial() {
     initBullets();
     initArrows();
     setTimeout(() => {
       slideRight();
-      centerArrowsOnImage();
     }, 500);
-
-    window.addEventListener('resize', centerArrowsOnImage);
   }
 
   slideInitial();
