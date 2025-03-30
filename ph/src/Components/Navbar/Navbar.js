@@ -5,42 +5,47 @@
  * - the router will show the Page associated to this URI when the user click on a nav-link
  */
 
+import Logo from "../../img/N-WHITE.png"
+
 const Navbar = () => {
   const navbarWrapper = document.querySelector("#navbarWrapper")
+  // Modifier la structure de la navbar pour mieux centrer les éléments
   const navbar = `
-  <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Nexis Lab (LOGO)</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" data-uri="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" data-uri="/photo">Photo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" data-uri="/contact">Contacts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#" data-uri="/">About us</a>
-              </li>
-            </ul>
-          </div>
+<nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="${Logo}" alt="Nexis Lab Logo" style="height: 70px; width: auto; margin-left: 15%;">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" data-uri="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" data-uri="/photo">Photo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" data-uri="/contact">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" data-uri="/">About us</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-  `
+      </div>
+    </nav>
+`
 
   navbarWrapper.innerHTML = navbar
 
@@ -49,6 +54,7 @@ const Navbar = () => {
     // Sélectionner le bouton hamburger et le menu
     const hamburgerButton = document.querySelector(".navbar-toggler")
     const navbarCollapse = document.querySelector("#navbarSupportedContent")
+    const navbarElement = document.querySelector(".navbar")
 
     // Fonction pour fermer le menu
     const closeMenu = () => {
@@ -73,9 +79,48 @@ const Navbar = () => {
       link.addEventListener("click", closeMenu)
     })
 
-    // Fermer le menu lors du défilement
+    // Gestion du scroll pour masquer/afficher la navbar
+    let lastScrollTop = 0
+    const scrollThreshold = 50 // Seuil de défilement avant de masquer/afficher la navbar
+    let isScrolling = false
+
     window.addEventListener("scroll", () => {
+      // Fermer le menu lors du défilement
       closeMenu()
+
+      // Gestion de l'affichage/masquage de la navbar
+      if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+          const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+          // Ne rien faire si on est tout en haut de la page
+          if (currentScrollTop <= 0) {
+            navbarElement.classList.remove("navbar-hidden")
+            navbarElement.classList.add("navbar-visible")
+            lastScrollTop = currentScrollTop
+            isScrolling = false
+            return
+          }
+
+          // Vérifier si le défilement dépasse le seuil
+          if (Math.abs(currentScrollTop - lastScrollTop) > scrollThreshold) {
+            // Défilement vers le bas - masquer la navbar
+            if (currentScrollTop > lastScrollTop) {
+              navbarElement.classList.remove("navbar-visible")
+              navbarElement.classList.add("navbar-hidden")
+            }
+            // Défilement vers le haut - afficher la navbar
+            else {
+              navbarElement.classList.remove("navbar-hidden")
+              navbarElement.classList.add("navbar-visible")
+            }
+            lastScrollTop = currentScrollTop
+          }
+
+          isScrolling = false
+        })
+      }
+      isScrolling = true
     })
 
     // Fermer le menu lorsqu'on clique ailleurs sur la page

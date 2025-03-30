@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 import phoneIcon from "../../img/phoneIcon.png"
 import homepageImage from "../../img/homepageImage.png"
 import descImg from "../../img/img_display.jpg"
 import ZirkonImg from "../../img/zirkon.png"
+import Logo from "../../img/N-WHITE.png"
 
 const HomePage = () => {
   const main = document.querySelector("main")
@@ -14,6 +16,9 @@ const HomePage = () => {
       <div class="parallax-bg" style="background: url('${homepageImage}') no-repeat center center;"></div>
       
       <div class="hero-content">
+        <div class="hero-logo" style="margin-bottom: 30px;">
+          <img src="${Logo}" alt="Nexis Lab Logo" style="height: 80px; width: auto;">
+        </div>
         <h1 class="hero-title">NEXIS LABORATORY</h1>
         <p class="hero-subtitle">Zgjidhje inovative dentare për buzëqeshje të përsosura</p>
         
@@ -53,7 +58,7 @@ const HomePage = () => {
             <div class="features-grid">
               <div class="feature-card">
                 <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e32d2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
@@ -64,7 +69,7 @@ const HomePage = () => {
               
               <div class="feature-card">
                 <div class="feature-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e32d2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
@@ -98,24 +103,87 @@ const HomePage = () => {
         
         <div class="product-section">
           <div class="product-info">
-            <h2 class="product-title">Zirkon</h2>
-            <p class="product-description">Implanti dentar është një zgjidhje moderne për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.</p>
+            <div class="product-title-group">
+              <h2 class="product-title">Restaurime Estetike</h2>
+              <div class="product-types">
+                <span class="product-type zirkon">Zirkon</span>
+                <span class="product-type emax">E-MAX</span>
+                <span class="product-type veneers">Veneers</span>
+              </div>
+            </div>
+            
+            <p class="product-description">Laboratori ynë prodhon restaurime dentare të cilësisë së lartë për klinika dhe dentistë që kërkojnë përsosmëri.</p>
+            
+            <div class="product-highlight-box">
+              <p class="product-highlight-text">
+                Zgjidhjet tona ofrojnë <span class="highlight-word">bukurinë natyrale</span> dhe <span class="highlight-word">qëndrueshmërinë</span> që kërkoni për pacientët tuaj.
+              </p>
+              <ul class="product-highlight-list">
+                <li><span class="product-type zirkon">Zirkon</span> - i fortë dhe rezistent</li>
+                <li><span class="product-type emax">E-MAX</span> - transparent dhe estetik</li>
+                <li><span class="product-type veneers">Veneers</span> - elegante dhe të holla</li>
+              </ul>
+            </div>
+            
+            <div class="product-cards-container">
+              <div class="product-detail-card zirkon-card">
+                <div class="product-card-header">
+                  <span class="product-type zirkon">Zirkon</span>
+                </div>
+                <div class="product-card-body">
+                  <p>Material i avancuar me rezistencë të jashtëzakonshme dhe estetikë superiore. Ideal për restaurime të plota dhe ura.</p>
+                  <ul class="product-card-features">
+                    <li>Rezistencë maksimale</li>
+                    <li>Biokompatibilitet i lartë</li>
+                    <li>Estetikë natyrale</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="product-detail-card emax-card">
+                <div class="product-card-header">
+                  <span class="product-type emax">E-MAX</span>
+                </div>
+                <div class="product-card-body">
+                  <p>Qeramikë me bazë litiumi që ofron transparencë dhe estetikë të përsosur. Perfekte për restaurime frontale.</p>
+                  <ul class="product-card-features">
+                    <li>Transparencë natyrale</li>
+                    <li>Ngjyra të qëndrueshme</li>
+                    <li>Përshtatje e përsosur</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="product-detail-card veneers-card">
+                <div class="product-card-header">
+                  <span class="product-type veneers">Veneers</span>
+                </div>
+                <div class="product-card-body">
+                  <p>Shtresa të holla porcelani që transformojnë buzëqeshjen. Të personalizuara për çdo pacient.</p>
+                  <ul class="product-card-features">
+                    <li>Dizajn minimal invaziv</li>
+                    <li>Estetikë e përsosur</li>
+                    <li>Personalizim i plotë</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             
             <ul class="product-features">
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e32d2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Rezistencë e jashtëzakonshme</span>
               </li>
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e32d2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Estetikë natyrale</span>
               </li>
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e32d2d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Biokompatibilitet i përsosur</span>
@@ -133,7 +201,7 @@ const HomePage = () => {
                     (i) => `
                   <div class="slider-single">
                     <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
-                    <h1 class="slider-single-title">Zirkon ${i}</h1>
+                    <h1 class="slider-single-title">${i <= 2 ? "Zirkon" : i <= 4 ? "E-MAX" : "Veneers"} ${i}</h1>
                     <a class="slider-single-likes" href="javascript:void(0);">
                       <i class="fa fa-heart"></i>
                       <p>1,247</p>
@@ -151,73 +219,6 @@ const HomePage = () => {
       </div>
     </div>
     
-    <!-- Testimonials Section -->
-    <div class="testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">DËSHMITË</span>
-          <h2 class="section-title">Çfarë thonë klientët tanë</h2>
-          <div class="section-divider"></div>
-        </div>
-        
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
-                <path d="M11.9 8.4c-.5-.3-1.2-.3-1.7 0l-7 4.2c-.5.3-.8.8-.8 1.4s.3 1.1.8 1.4l7 4.2c.3.2.6.2.9.2.3 0 .6-.1.9-.2l7-4.2c.5-.3.8-.8.8-1.4s-.3-1.1-.8-1.4l-7-4.2z"></path>
-              </svg>
-            </div>
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Cilësia e protezave dentare nga NEXIS Laboratory është e jashtëzakonshme. Pacientët e mi janë gjithmonë të kënaqur me rezultatin përfundimtar."</p>
-              <div class="testimonial-author">
-                <div class="author-avatar"></div>
-                <div class="author-info">
-                  <h4 class="author-name">Dr. Arben Murtezaj</h4>
-                  <p class="author-title">Dentist, Prishtinë</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
-                <path d="M11.9 8.4c-.5-.3-1.2-.3-1.7 0l-7 4.2c-.5.3-.8.8-.8 1.4s.3 1.1.8 1.4l7 4.2c.3.2.6.2.9.2.3 0 .6-.1.9-.2l7-4.2c.5-.3.8-.8.8-1.4s-.3-1.1-.8-1.4l-7-4.2z"></path>
-              </svg>
-            </div>
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Unë punoj me NEXIS prej vitesh dhe jam gjithmonë i impresionuar nga profesionalizmi i tyre dhe respektimi i afateve."</p>
-              <div class="testimonial-author">
-                <div class="author-avatar"></div>
-                <div class="author-info">
-                  <h4 class="author-name">Dr. Fatmir Hajrizi</h4>
-                  <p class="author-title">Kirurg dentar, Ferizaj</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none">
-                <path d="M11.9 8.4c-.5-.3-1.2-.3-1.7 0l-7 4.2c-.5.3-.8.8-.8 1.4s.3 1.1.8 1.4l7 4.2c.3.2.6.2.9.2.3 0 .6-.1.9-.2l7-4.2c.5-.3.8-.8.8-1.4s-.3-1.1-.8-1.4l-7-4.2z"></path>
-              </svg>
-            </div>
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Protezat Zirkon nga NEXIS janë të një cilësie të jashtëzakonshme. Unë rekomandoj fuqimisht shërbimet e tyre për të gjithë kolegët e mi."</p>
-              <div class="testimonial-author">
-                <div class="author-avatar"></div>
-                <div class="author-info">
-                  <h4 class="author-name">Dr. Vjosa Krasniqi</h4>
-                  <p class="author-title">Dentiste estetike, Prizren</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <!-- Contact CTA Section -->
     <div id="contact" class="contact-cta">
       <div class="container">
@@ -226,7 +227,7 @@ const HomePage = () => {
         
         <div class="cta-buttons">
           <a href="tel:+38344379656" class="cta-phone-btn">
-            <img src="${phoneIcon}" alt="Phone Icon" style="width: 24px; height: 24px; margin-right: 10px; filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(87%) contrast(97%);">
+            <img src="${phoneIcon}" alt="Phone Icon" style="width: 24px; height: 24px; margin-right: 10px; filter: invert(100%);">
             +383 44 379 656
           </a>
           <a href="/contact" class="cta-contact-btn">
@@ -384,18 +385,21 @@ const HomePage = () => {
     if (parallaxBg) {
       parallaxBg.style.transform = `translateY(${scrollPosition * 0.4}px) translateZ(-1px) scale(2)`
     }
-    
+
     // Animation des éléments au scroll
-    const animateElements = document.querySelectorAll('.section-title, .section-tag, .text-highlight, .feature-card, .testimonial-card');
-    animateElements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
-      
+    const animateElements = document.querySelectorAll(
+      ".section-title, .section-tag, .text-highlight, .feature-card, .product-detail-card",
+    )
+    animateElements.forEach((element) => {
+      const elementPosition = element.getBoundingClientRect().top
+      const screenPosition = window.innerHeight / 1.3
+
       if (elementPosition < screenPosition) {
-        element.classList.add('animate-in');
+        element.classList.add("animate-in")
       }
-    });
+    })
   })
 }
 
 export default HomePage
+
