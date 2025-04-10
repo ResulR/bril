@@ -3,17 +3,14 @@ const Contact = () => {
   const contact = `
       <div class="contact-page" style="min-height: 85vh; display: flex; flex-direction: column; width: 100%;">
         <div class="menu-container" style="margin-top: 30px; margin-bottom: 50px; text-align: center;">
-          <h2 class="title" style="font-size: 32px; font-weight: 600; color: #333; letter-spacing: 1px;">CONTACTS</h2>
+          <h2 class="title" style="font-size: 32px; font-weight: 600; color: #e0e0e0; letter-spacing: 1px;">CONTACTS</h2>
         </div>
         
         <div class="contact-section" style="width: 85%; max-width: 1200px; margin: 0 auto; flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
           <div class="contact-header" style="margin-bottom: 60px; position: relative;">
-            <div style="display: flex; align-items: center; justify-content: center;">
-              <div style="height: 1px; background-color: #333; width: 180px;"></div>
-              <h2 style="margin: 0 20px; font-size: 28px; font-weight: 500; color: #333; letter-spacing: 0.5px;">Contact us</h2>
-              <div style="height: 1px; background-color: #333; width: 180px;"></div>
-            </div>
+          <div style="display: flex; align-items: center; justify-content: center;">
           </div>
+        </div>
           
           <div class="contact-info-container" style="display: flex; justify-content: space-between; width: 100%; margin-top: 20px; flex-wrap: wrap; gap: 40px;">
             <!-- Phone Section -->
@@ -163,4 +160,3 @@ const Contact = () => {
 }
 
 export default Contact
-

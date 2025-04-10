@@ -105,85 +105,44 @@ const HomePage = () => {
           <div class="product-info">
             <div class="product-title-group">
               <h2 class="product-title">Restaurime Estetike</h2>
-              <div class="product-types">
-                <span class="product-type zirkon">Zirkon</span>
-                <span class="product-type emax">E-MAX</span>
-                <span class="product-type veneers">Veneers</span>
-              </div>
+              <div class="product-title-underline"></div>
             </div>
             
-            <p class="product-description">Laboratori ynë prodhon restaurime dentare të cilësisë së lartë për klinika dhe dentistë që kërkojnë përsosmëri.</p>
+            <div class="product-types">
+              <span class="product-type zirkon">Zirkon</span>
+              <span class="product-type emax">E-MAX</span>
+              <span class="product-type veneers">Veneers</span>
+            </div>
+            
+            <p class="product-description">Implanti dentar është një zgjidhje moderne për këdo që dëshiron të rikthejë një dhëmbëzim të shëndetshëm.</p>
             
             <div class="product-highlight-box">
+              <div class="highlight-border"></div>
               <p class="product-highlight-text">
-                Zgjidhjet tona ofrojnë <span class="highlight-word">bukurinë natyrale</span> dhe <span class="highlight-word">qëndrueshmërinë</span> që kërkoni për pacientët tuaj.
+                Zgjidhjet tona estetike ofrojnë <span class="highlight-word">bukurinë natyrale</span> dhe <span class="highlight-word">qëndrueshmërinë</span> që kërkoni.
               </p>
               <ul class="product-highlight-list">
-                <li><span class="product-type zirkon">Zirkon</span> - i fortë dhe rezistent</li>
-                <li><span class="product-type emax">E-MAX</span> - transparent dhe estetik</li>
-                <li><span class="product-type veneers">Veneers</span> - elegante dhe të holla</li>
+                <li><span class="product-type zirkon">Zirkon</span> - i fortë dhe rezistent, material inovativ me jetëgjatësi të lartë. Ofron stabilitet maksimal dhe është ideal për restaurimet e dhëmbëve të pasëm. Biokompatibël me indet e gojës dhe rezistent ndaj thyerjeve.</li>
+                <li><span class="product-type emax">E-MAX</span> - transparent dhe estetik, perfekt për restaurimet frontale. Imiton pamjen e dhëmbëve natyralë dhe reflekton dritën në mënyrë optimale. Kombinon bukurinë me qëndrueshmërinë për rezultate afatgjata.</li>
+                <li><span class="product-type veneers">Veneers</span> - elegante dhe të holla, ideale për transformimin e buzëqeshjes. Kërkojnë ndërhyrje minimale në strukturën e dhëmbit dhe ofrojnë rezistencë ndaj njollave. Zgjidhja perfekte për dhëmbë të çngjyrosur ose të dëmtuar lehtë.</li>
               </ul>
-            </div>
-            
-            <div class="product-cards-container">
-              <div class="product-detail-card zirkon-card">
-                <div class="product-card-header">
-                  <span class="product-type zirkon">Zirkon</span>
-                </div>
-                <div class="product-card-body">
-                  <p>Material i avancuar me rezistencë të jashtëzakonshme dhe estetikë superiore. Ideal për restaurime të plota dhe ura.</p>
-                  <ul class="product-card-features">
-                    <li>Rezistencë maksimale</li>
-                    <li>Biokompatibilitet i lartë</li>
-                    <li>Estetikë natyrale</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div class="product-detail-card emax-card">
-                <div class="product-card-header">
-                  <span class="product-type emax">E-MAX</span>
-                </div>
-                <div class="product-card-body">
-                  <p>Qeramikë me bazë litiumi që ofron transparencë dhe estetikë të përsosur. Perfekte për restaurime frontale.</p>
-                  <ul class="product-card-features">
-                    <li>Transparencë natyrale</li>
-                    <li>Ngjyra të qëndrueshme</li>
-                    <li>Përshtatje e përsosur</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div class="product-detail-card veneers-card">
-                <div class="product-card-header">
-                  <span class="product-type veneers">Veneers</span>
-                </div>
-                <div class="product-card-body">
-                  <p>Shtresa të holla porcelani që transformojnë buzëqeshjen. Të personalizuara për çdo pacient.</p>
-                  <ul class="product-card-features">
-                    <li>Dizajn minimal invaziv</li>
-                    <li>Estetikë e përsosur</li>
-                    <li>Personalizim i plotë</li>
-                  </ul>
-                </div>
-              </div>
             </div>
             
             <ul class="product-features">
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Rezistencë e jashtëzakonshme</span>
               </li>
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Estetikë natyrale</span>
               </li>
               <li>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <span>Biokompatibilitet i përsosur</span>
@@ -199,15 +158,15 @@ const HomePage = () => {
                 ${[1, 2, 3, 4, 5, 6]
                   .map(
                     (i) => `
-                  <div class="slider-single">
-                    <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
-                    <h1 class="slider-single-title">${i <= 2 ? "Zirkon" : i <= 4 ? "E-MAX" : "Veneers"} ${i}</h1>
-                    <a class="slider-single-likes" href="javascript:void(0);">
-                      <i class="fa fa-heart"></i>
-                      <p>1,247</p>
-                    </a>
-                  </div>
-                `,
+                <div class="slider-single">
+                  <img class="slider-single-image" src="${ZirkonImg}" alt="Zirkon ${i}" />
+                  <h1 class="slider-single-title">${i <= 2 ? "Zirkon" : i <= 4 ? "E-MAX" : "Veneers"} ${i}</h1>
+                  <a class="slider-single-likes" href="javascript:void(0);">
+                    <i class="fa fa-heart"></i>
+                    <p>1,247</p>
+                  </a>
+                </div>
+              `,
                   )
                   .join("")}
               </div>
@@ -402,4 +361,3 @@ const HomePage = () => {
 }
 
 export default HomePage
-
