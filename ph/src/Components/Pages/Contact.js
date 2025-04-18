@@ -42,7 +42,7 @@ const Contact = () => {
                 </div>
                 <div style="border-bottom: 1px solid #ddd; width: 70%; margin: 0 auto 20px auto;"></div>
                 <h3 style="font-weight: 600; margin-bottom: 12px; font-size: 18px; color: #333; letter-spacing: 1px;">SOCIAL MEDIA</h3>
-                <p style="font-size: 16px; color: #555;">nexus laboratory</p>
+                <p style="font-size: 16px; color: #555;">nexis laboratory</p>
               </div>
             </div>
             

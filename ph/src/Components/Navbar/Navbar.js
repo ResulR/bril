@@ -32,15 +32,19 @@ const Navbar = () => {
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#" data-uri="/">Home</a>
             </li>
+            <!--
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#" data-uri="/photo">Photo</a>
             </li>
+            -->
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#" data-uri="/contact">Contacts</a>
             </li>
+            <!--
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#" data-uri="/">About us</a>
             </li>
+            -->
           </ul>
         </div>
       </div>
