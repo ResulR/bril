@@ -4,15 +4,30 @@
 /* eslint-disable no-plusplus */
 import phoneIcon from "../../img/phoneIcon.png"
 import homepageImage from "../../img/homepageImage.png"
-import dent8 from "../../img/dent8.jpg"
 import ZirkonImg from "../../img/zirkon.png"
 import Logo from "../../img/N-WHITE.png"
-// Import des nouvelles images
-import dent1 from "../../img/dent1.jpg"
 import dent2 from "../../img/dent2.jpg"
+import dent3 from "../../img/dent3.jpg"
 import dent4 from "../../img/dent4.jpg"
 import dent7 from "../../img/dent7.jpg"
-import dent6 from "../../img/dent6.jpg"
+import dent10 from "../../img/dent10.jpg"
+import dent15 from "../../img/dent15.jpg"
+import dent17 from "../../img/dent17.jpg"
+// Correction de l'extension pour dent19 (.jpg au lieu de .png)
+import dent19 from "../../img/dent19.jpg"
+// Ajout de l'import pour dent21
+import dent21 from "../../img/dent21.jpg"
+// Ajout de l'import pour dent22
+import dent22 from "../../img/dent22.jpg"
+// Import des images spécifiques pour les produits
+import ibarImg from "../../img/ibar.jpg"
+import metalPorcelanImg from "../../img/metal-porcelan.jpg"
+// Ajouter les imports manquants après les imports existants
+import dent9 from "../../img/dent9.jpg"
+import dent14 from "../../img/dent14.jpg"
+import dent16 from "../../img/dent16.jpg"
+import dent23 from "../../img/dent23.jpg"
+import dent24 from "../../img/dent24.jpg"
 
 const HomePage = () => {
   const main = document.querySelector("main")
@@ -50,6 +65,7 @@ const HomePage = () => {
 
    <!-- About Section -->
    <div id="about" class="about-section">
+     <div class="about-bg-overlay"></div>
      <div class="container">
        <div class="section-header">
          <span class="section-tag">RRETH NESH</span>
@@ -59,7 +75,7 @@ const HomePage = () => {
        
        <div class="about-content">
          <div class="about-text">
-           <p class="text-highlight">Laboratori ynë dentar <span class="text-accent">NEXIS</span> osht i specializuar në krijimin e restaurimeve precize, estetike dhe funksionale. Me përkushtim maksimal ndaj detajeve dhe teknologjisë më të fundit, bashkëpunojmë ngushtë me stomatologët për të ofruar zgjidhje të personalizuara si kurora, ura, faseta dhe proteza të lëvizshme apo fikse.</p>
+           <p class="text-highlight">Laboratori <span class="text-accent">NEXIS</span> specializohet në restaurime dentare precize dhe estetike. Me teknologji moderne dhe përkushtim ndaj detajeve, ofrojmë zgjidhje të personalizuara si kurora, ura, faseta dhe proteza për klientët tanë.</p>
 
            <p class="text-highlight">
              <span class="key-word precision">Precizion</span>. 
@@ -81,11 +97,11 @@ const HomePage = () => {
              
              <div class="feature-card">
                <div class="feature-image">
-                 <img src="${dent6}" alt="Afate të shpejta">
+                 <img src="${dent24}" alt="Afate të shpejta">
                </div>
                <div class="feature-content">
                  <h3 class="feature-title">Afate të shpejta</h3>
-                 <p class="feature-text">Natyrisht qe perkushtimi ndaj punes ton qe nderlidhet me buqeshjen dhe shendetin e pacienteve,na bene qe gjithmon te respektojm afatet kohore.</p>
+                    <p class="feature-text">Natyrisht që përkushtimi ndaj punës tonë që ndërlidhet me buzëqeshjen dhe shëndetin e pacientëve, na bënë që gjithmonë të respektojmë afatet kohore.</p>
                </div>
              </div>
            </div>
@@ -110,80 +126,137 @@ const HomePage = () => {
              <h2 class="product-title">Restaurime Estetike</h2>
              <div class="product-title-underline"></div>
            </div>
-           
-           <div class="product-types">
-             <span class="product-type zirkon">Zirkon</span>
-             <span class="product-type emax">E-MAX</span>
-             <span class="product-type veneers">Veneers</span>
-             <span class="product-type metal-porcelan">Metal-porcelan</span>
-             <span class="product-type ibar">IBAR-i</span>
-             <span class="product-type implant">Implantet dentare</span>
-             <span class="product-type urat">Urat me ataçmente</span>
+
+           <div class="product-description-container">
+             <div class="product-description-image">
+               <img src="${dent10}" alt="Restaurime Estetike">
+             </div>
+             <p class="product-description">
+               Në laboratorin tonë dentare përdorim vetëm materiale të cilësisë më të lartë, për të garantuar qëndrueshmëri, estetikë dhe rehati maksimale për pacientët tanë.
+             </p>
            </div>
            
-           <p class="product-description">
-             Në laboratorin tonë dentare përdorim vetëm materiale të cilësisë më të lartë, për të garantuar qëndrueshmëri, estetikë dhe rehati maksimale për pacientët tanë.
-           </p>
-           
-           <div class="modern-highlight-box">
-             <div class="highlight-content full-width">
-               <div class="highlight-border"></div>
-               <p class="product-highlight-text">
-                 Zgjidhjet tona estetike ofrojnë <span class="highlight-word">bukurinë natyrale</span> dhe <span class="highlight-word">qëndrueshmërinë</span> që kërkoni.
+           <div class="product-items-container">
+             <!-- Zirkon Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge zirkon">Zirkon</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${dent7}" alt="Zirkon">
+               </div>
+               <p class="product-item-description">
+                 I fortë dhe rezistent për dhëmbët e pasëm.
                </p>
-               <ul class="product-highlight-list">
-                 <li>
-                   <span class="product-type zirkon">Zirkon</span>
-                   <span>- I fortë dhe rezistent për dhëmbët e pasëm.</span>
-                 </li>
-                 <li>
-                   <span class="product-type emax">E-MAX</span>
-                   <span>- Elegancë dhe transparencë maksimale.</span>
-                 </li>
-                 <li>
-                   <span class="product-type veneers">Veneers</span>
-                   <span>- Të holla dhe elegante për transformim të buzëqeshjes.</span>
-                 </li>
-                 <li>
-                   <span class="product-type metal-porcelan">Metal-porcelan</span>
-                   <span>- Kombinim i bazës metalike me mbulesë qeramike, për qëndrueshmëri dhe estetikë.</span>
-                 </li>
-                 <li>
-                   <span class="product-type ibar">IBAR-i</span>
-                   <span>- Është një strukturë metalike që ofron forcë, stabilitet dhe jetëgjatësi në ura protetike, veçanërisht në rastet me mungesë të madhe dhëmbësh.</span>
-                 </li>
-                 <li>
-                   <span class="product-type implant">Implantet dentare</span>
-                   <span>- restaurime precize, estetike dhe të personalizuara</span>
-                 </li>
-                 <li>
-                   <span class="product-type urat">Urat me ataçmente</span>
-                   <span>- zgjidhje diskrete, të qëndrueshme dhe funksionale. Dizajnuara me precizion për komoditet dhe estetikë maksimale.</span>
-                 </li>
-               </ul>
+             </div>
+             
+             <!-- E-MAX Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge emax">E-MAX</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${dent22}" alt="E-MAX">
+               </div>
+               <p class="product-item-description">
+                 Elegancë dhe transparencë maksimale.
+               </p>
+             </div>
+             
+             <!-- Veneers Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge veneers">Veneers</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${dent19}" alt="Veneers">
+               </div>
+               <p class="product-item-description">
+                 Të holla dhe elegante për transformim të buzëqeshjes.
+               </p>
+             </div>
+             
+             <!-- Metal-porcelan Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge metal-porcelan">Metal-porcelan</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${metalPorcelanImg}" alt="Metal-porcelan">
+               </div>
+               <p class="product-item-description">
+                 Kombinim i bazës metalike me mbulese qeramike, për qëndrueshmëri dhe estetikë.
+               </p>
+             </div>
+             
+             <!-- IBAR-i Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge ibar">IBAR-i</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${ibarImg}" alt="IBAR-i">
+               </div>
+               <p class="product-item-description">
+                 Është një strukturë metalike që ofron forcë, stabilitet dhe jetëgjatësi në ura protetike, veçanërisht në rastet me mungesë të madhe dhëmbësh.
+               </p>
+             </div>
+             
+             <!-- Implantet dentare Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge implant">Implantet dentare</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${dent17}" alt="Implantet dentare">
+               </div>
+               <p class="product-item-description">
+                 restaurime precize, estetike dhe të personalizuara
+               </p>
+             </div>
+             
+             <!-- Urat me ataçmente Item -->
+             <div class="product-item">
+               <div class="product-badge-container">
+                 <span class="product-badge urat">Urat me ataçmente</span>
+               </div>
+               <div class="product-item-image">
+                 <img src="${dent21}" alt="Urat me ataçmente">
+               </div>
+               <p class="product-item-description">
+                 zgjidhje diskrete, të qëndrueshme dhe funksionale. Dizajnuara me precizion për komoditet dhe estetikë maksimale.
+               </p>
              </div>
            </div>
-
          </div>
-         
+       </div>
+
+       <!-- Section du carrousel sans le titre -->
+       <div class="carousel-section">
          <div class="carousel-wrapper">
            <div class="slider-container">
              <div class="slider-content">
-               <!-- Réorganisation des images selon l'ordre demandé : 4, 7, 2, 8, 1 -->
+               <!-- Images du carousel dans l'ordre demandé : 4, 14, 2, 9, 15, 23, 16 -->
                <div class="slider-single">
                  <img class="slider-single-image" src="${dent4}" alt="Dent 4" />
                </div>
                <div class="slider-single">
-                 <img class="slider-single-image" src="${dent7}" alt="Dent 7" />
+                 <img class="slider-single-image" src="${dent14}" alt="Dent 14" />
                </div>
                <div class="slider-single">
                  <img class="slider-single-image" src="${dent2}" alt="Dent 2" />
                </div>
                <div class="slider-single">
-                 <img class="slider-single-image" src="${dent8}" alt="Dent 8" />
+                 <img class="slider-single-image" src="${dent9}" alt="Dent 9" />
                </div>
                <div class="slider-single">
-                 <img class="slider-single-image" src="${dent1}" alt="Dent 1" />
+                 <img class="slider-single-image" src="${dent15}" alt="Dent 15" />
+               </div>
+               <div class="slider-single">
+                 <img class="slider-single-image" src="${dent23}" alt="Dent 23" />
+               </div>
+               <div class="slider-single">
+                 <img class="slider-single-image" src="${dent16}" alt="Dent 16" />
                </div>
              </div>
              <a class="slider-left"><span class="arrow arrow-left"></span></a>
@@ -196,6 +269,8 @@ const HomePage = () => {
                <div class="bullet" id="bullet-index-2"></div>
                <div class="bullet" id="bullet-index-3"></div>
                <div class="bullet" id="bullet-index-4"></div>
+               <div class="bullet" id="bullet-index-5"></div>
+               <div class="bullet" id="bullet-index-6"></div>
              </div>
            </div>
          </div>
@@ -305,6 +380,250 @@ const HomePage = () => {
        opacity: 1;
        transform: scale(1.2);
        box-shadow: 0 0 10px rgba(126, 87, 194, 0.7);
+     }
+     
+     /* Styles pour la section About avec image de fond */
+     .about-section {
+       position: relative;
+       padding: 80px 0;
+       width: 100%;
+       background: rgba(18, 18, 18, 0.7); /* Fond semi-transparent au lieu du dégradé */
+       z-index: 1;
+     }
+     
+     .about-section::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: url('${dent3}') no-repeat center center;
+       background-size: cover;
+       opacity: 0.4; /* Augmentation de l'opacité pour rendre l'image plus visible */
+       z-index: -1;
+       filter: brightness(0.9); /* Réduction du flou et augmentation de la luminosité */
+     }
+     
+     .about-bg-overlay {
+       display: none; /* Suppression de l'overlay avec le dégradé mauve */
+     }
+     
+     .about-text {
+       position: relative;
+       z-index: 2;
+     }
+     
+     .text-highlight {
+       color: var(--text-primary);
+       font-size: 1.25rem;
+       line-height: 1.8;
+       margin-bottom: 30px;
+       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Ombre légèrement plus prononcée pour la lisibilité */
+     }
+     
+     @media (max-width: 768px) {
+       .text-highlight {
+         font-size: 1.1rem;
+       }
+     }
+     
+     /* Styles pour les éléments de produit */
+     .product-description {
+       font-size: 1.2rem;
+       line-height: 1.8;
+       color: var(--text-primary);
+       margin-bottom: 30px;
+     }
+     
+     /* Styles pour le conteneur de description de produit avec image */
+     .product-description-container {
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       gap: 25px;
+       margin: 25px 0 30px 0;
+       background-color: rgba(0, 0, 0, 0.5);
+       border-radius: 12px;
+       padding: 20px;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+     }
+
+     .product-description-image {
+       flex: 1;
+       min-width: 200px;
+       max-width: 300px;
+       border-radius: 8px;
+       overflow: hidden;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+     }
+
+     .product-description-image img {
+       width: 100%;
+       height: auto;
+       display: block;
+       transition: transform 0.5s ease;
+     }
+
+     .product-description-image:hover img {
+       transform: scale(1.05);
+     }
+
+     .product-description {
+       flex: 2;
+       min-width: 250px;
+       font-size: 1.2rem;
+       line-height: 1.8;
+       color: var(--text-primary);
+       margin: 0;
+     }
+
+     @media (max-width: 768px) {
+       .product-description-container {
+         flex-direction: column;
+       }
+       
+       .product-description-image {
+         max-width: 100%;
+         margin: 0 auto;
+       }
+       
+       .product-description {
+         text-align: center;
+       }
+     }
+     
+     /* Styles pour les éléments de produit */
+     .product-items-container {
+       display: grid;
+       grid-template-columns: repeat(1, 1fr);
+       gap: 30px;
+       margin-top: 40px;
+     }
+     
+     @media (min-width: 768px) {
+       .product-items-container {
+         grid-template-columns: repeat(2, 1fr);
+       }
+     }
+     
+     @media (min-width: 1200px) {
+       .product-items-container {
+         grid-template-columns: repeat(3, 1fr);
+       }
+     }
+     
+     .product-item {
+       background-color: rgba(0, 0, 0, 0.5);
+       border-radius: 12px;
+       overflow: hidden;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+     
+     .product-item:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+     }
+     
+     .product-badge-container {
+       display: flex;
+       justify-content: center;
+       padding: 15px 0;
+     }
+     
+     .product-badge {
+       display: inline-block;
+       font-size: 1rem;
+       font-weight: 600;
+       padding: 8px 20px;
+       border-radius: 30px;
+     }
+     
+     .product-badge.zirkon {
+       background-color: rgba(126, 87, 194, 0.2);
+       color: var(--zirkon-color);
+       border: 1px solid rgba(126, 87, 194, 0.3);
+     }
+     
+     .product-badge.emax {
+       background-color: rgba(66, 153, 225, 0.2);
+       color: var(--emax-color);
+       border: 1px solid rgba(66, 153, 225, 0.3);
+     }
+     
+     .product-badge.veneers {
+       background-color: rgba(236, 72, 153, 0.2);
+       color: var(--veneers-color);
+       border: 1px solid rgba(236, 72, 153, 0.3);
+     }
+     
+     .product-badge.metal-porcelan {
+       background-color: rgba(76, 175, 80, 0.2);
+       color: var(--metal-porcelan-color);
+       border: 1px solid rgba(76, 175, 80, 0.3);
+     }
+     
+     .product-badge.ibar {
+       background-color: rgba(255, 152, 0, 0.2);
+       color: var(--ibar-color);
+       border: 1px solid rgba(255, 152, 0, 0.3);
+     }
+     
+     .product-badge.implant {
+       background-color: rgba(233, 30, 99, 0.2);
+       color: var(--implant-color);
+       border: 1px solid rgba(233, 30, 99, 0.3);
+     }
+     
+     .product-badge.urat {
+       background-color: rgba(0, 188, 212, 0.2);
+       color: var(--urat-color);
+       border: 1px solid rgba(0, 188, 212, 0.3);
+     }
+     
+     .product-item-image {
+       width: 100%;
+       height: 200px;
+       overflow: hidden;
+     }
+     
+     .product-item-image img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       transition: transform 0.5s ease;
+     }
+     
+     .product-item:hover .product-item-image img {
+       transform: scale(1.05);
+     }
+     
+     .product-item-description {
+       color: var(--text-primary);
+       font-size: 1rem;
+       line-height: 1.6;
+       padding: 15px 20px 20px;
+       margin: 0;
+       text-align: center;
+     }
+     
+     @media (max-width: 768px) {
+       .product-item-image {
+         height: 180px;
+       }
+     }
+     
+     /* Styles pour la section du carrousel */
+     .carousel-section {
+       margin-top: 60px;
+       padding-bottom: 60px;
+     }
+     
+     .carousel-wrapper {
+       width: 100%;
+       max-width: 1000px;
+       margin: 0 auto;
      }
    </style>
  `
@@ -420,8 +739,6 @@ const HomePage = () => {
     }, 500)
   }
 
-  slideInitial()
-
   // Shtoni një efekt parallax në hero
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY
@@ -432,7 +749,7 @@ const HomePage = () => {
 
     // Animation des éléments au scroll
     const animateElements = document.querySelectorAll(
-      ".section-title, .section-tag, .text-highlight, .feature-card, .product-detail-card",
+      ".section-title, .section-tag, .text-highlight, .feature-card, .product-item",
     )
     animateElements.forEach((element) => {
       const elementPosition = element.getBoundingClientRect().top
@@ -443,6 +760,7 @@ const HomePage = () => {
       }
     })
   })
+  slideInitial()
 }
 
 export default HomePage
